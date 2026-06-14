@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#c99b5b" />
+    <meta
+      name="description"
+      content="мобильная party-игра по qr-коду для 17-летия сони"
+    />
+    <title>уровень 17</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app" aria-live="polite">
+      <section class="screen screen-active" id="start-screen">
+        <div class="map-frame hero">
+          <p class="kicker">party-карта</p>
+          <h1 class="start-title">уровень 17</h1>
+          <p class="lead">
+            карточки, таймер и управляемый хаос для вечеринки.
+          </p>
+          <button class="primary-action" data-action="start">начать</button>
+        </div>
+      </section>
+
+      <section class="screen" id="setup-screen">
+        <div class="topline">
+          <span class="stamp">настройка</span>
+          <button class="ghost-action" data-action="reset">сброс</button>
+        </div>
+
+        <div class="map-frame">
+          <h2>выбери команду</h2>
+          <div class="team-grid" role="radiogroup" aria-label="команда">
+            <button class="team-card selected" data-team="1" role="radio" aria-checked="true">
+              <span>команда 1</span>
+              <b>ловцы покемонов</b>
+            </button>
+            <button class="team-card" data-team="2" role="radio" aria-checked="false">
+              <span>команда 2</span>
+              <b>вайнеры последнего дня</b>
+            </button>
+            <button class="team-card" data-team="3" role="radio" aria-checked="false">
+              <span>команда 3</span>
+              <b>орден musical.ly</b>
+            </button>
+            <button class="team-card" data-team="4" role="radio" aria-checked="false">
+              <span>команда 4</span>
+              <b>секта дэба</b>
+            </button>
+          </div>
+        </div>
+
+        <div class="map-frame compact">
+          <h2>длина партии</h2>
+          <div class="segmented" role="radiogroup" aria-label="длина партии">
+            <button class="selected" data-rounds="5" aria-checked="true">5 раундов</button>
+            <button data-rounds="8" aria-checked="false">8</button>
+            <button data-rounds="10" aria-checked="false">10</button>
+          </div>
+          <button class="primary-action full" data-action="play">играть</button>
+        </div>
+      </section>
+
+      <section class="screen" id="game-screen">
+        <div class="hud">
+          <div>
+            <span class="label">раунд</span>
+            <strong id="round-label">1/5</strong>
+          </div>
+          <div>
+            <span class="label">команда</span>
+            <strong id="team-label">1</strong>
+          </div>
+          <div>
+            <span class="label">очки</span>
+            <strong id="score-label">0</strong>
+          </div>
+          <button class="home-action" data-action="home" aria-label="домой">⌂</button>
+        </div>
+
+        <article class="card map-frame" id="card">
+          <div class="card-top">
+            <span class="type-badge" id="card-type">разогрев</span>
+          </div>
+          <p class="prompt" id="card-text"></p>
+        </article>
+
+        <div class="timer map-frame compact">
+          <div class="timer-row">
+            <span>таймер</span>
+            <strong id="timer-label">45</strong>
+          </div>
+          <div class="timer-track" aria-hidden="true">
+            <div class="timer-fill" id="timer-fill"></div>
+          </div>
+          <div class="timer-actions">
+            <button class="ghost-action" data-time="30">30</button>
+            <button class="ghost-action selected" data-time="45">45</button>
+            <button class="ghost-action" data-time="60">60</button>
+            <button class="ghost-action" data-action="timer-toggle">старт</button>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button class="score-action" data-action="minus">-1</button>
+          <button class="primary-action" data-action="next">следующая</button>
+          <button class="score-action" data-action="plus">+1</button>
+        </div>
+      </section>
+
+      <section class="screen" id="finish-screen">
+        <div class="map-frame hero">
+          <p class="kicker">финал</p>
+          <h1>уровень 17 открыт</h1>
+          <p class="lead" id="finish-copy">
+            партия закрыта. соня официально пережила ещё один сюжетный поворот.
+          </p>
+          <div class="final-score">
+            <span>ваш счёт</span>
+            <strong id="finish-score">0</strong>
+          </div>
+          <button class="primary-action" data-action="again">сыграть ещё</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

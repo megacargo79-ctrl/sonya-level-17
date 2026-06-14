@@ -1,0 +1,10 @@
+{
+  "name": "уровень 17",
+  "short_name": "уровень 17",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#c99b5b",
+  "theme_color": "#c99b5b",
+  "lang": "ru",
+  "orientation": "portrait"
+}
