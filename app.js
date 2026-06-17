@@ -134,6 +134,7 @@ const els = {
   scoreLabel: document.querySelector("#score-label"),
   cardType: document.querySelector("#card-type"),
   cardText: document.querySelector("#card-text"),
+  card: document.querySelector("#card"),
   timerLabel: document.querySelector("#timer-label"),
   timerFill: document.querySelector("#timer-fill"),
   finishScore: document.querySelector("#finish-score"),
@@ -313,6 +314,7 @@ function render() {
 
   const card = CARDS[state.currentCard] || CARDS[0];
   const meta = CARD_TYPES[card.type];
+  els.card.dataset.type = card.type;
   els.cardType.textContent = meta.label;
   els.cardText.textContent = card.text;
   els.finishCopy.textContent = finishText(state.score);
